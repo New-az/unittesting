@@ -53,6 +53,11 @@ public class ListUtilTest {
 		assertEquals(10, ListUtil.countUnique(list));
 	}
 	
+	@Test
+	public void testTypeOfElement() {
+		List<?> list = makeList("SKE",15,true,null,1.0);
+		assertEquals(5,ListUtil.countUnique(list));
+	}
 	
 	private List<?> makeList(Object ... elements){
 		return java.util.Arrays.asList(elements);

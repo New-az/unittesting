@@ -20,3 +20,6 @@ If list a and b is duplicate but,then return same.
 
 ## Check index of many element.
 If list have many it should run correctly.
+
+## Check type of element.
+If list contain many type like {"String",int,float,double},then run correctly.
