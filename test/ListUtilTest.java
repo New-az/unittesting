@@ -59,8 +59,35 @@ public class ListUtilTest {
 		assertEquals(5,ListUtil.countUnique(list));
 	}
 	
+	@Test (expected = IllegalArgumentException.class)
+	public void testElementIsNull() {
+		String[] x = {"SKE"};
+		ListUtil.binarySearch(x, null);
+	}
+	
+	@Test 
+	public void testOneArray() {
+		String[] name = {"SKE"};
+		assertEquals(0, ListUtil.binarySearch(name, "SKE"));		
+	}
+	
+	@Test
+	public void testBinarySearch() {
+		String[] fruit = {"apple","banana","cherries","dewberries","eggfruit"};
+		assertEquals(1, ListUtil.binarySearch(fruit, "banana"));	
+		assertEquals(3, ListUtil.binarySearch(fruit, "dewberries"));	
+		assertEquals(4, ListUtil.binarySearch(fruit, "eggfruit"));	
+	}
+	
+	@Test
+	public void testNotFound() {
+		Integer[] number = {1,2,3,4,5};
+		assertEquals(-1, ListUtil.binarySearch(number, 0));
+		assertEquals(-1, ListUtil.binarySearch(number, 10));
+		assertEquals(-1, ListUtil.binarySearch(number, -5));
+	}
+
 	private List<?> makeList(Object ... elements){
 		return java.util.Arrays.asList(elements);
 	}
-
 }
